@@ -1,0 +1,34 @@
+/**
+ * Place your custom CSS styles here.
+ **/
+@-webkit-keyframes psycho {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
+@keyframes psycho {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
+body {
+  -webkit-animation: psycho 2s infinite linear;
+          animation: psycho 2s infinite linear;
+}
+
+  body::after {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-color: hsla(0, 50%, 50%, 0.05);
+    content: '';
+  }
