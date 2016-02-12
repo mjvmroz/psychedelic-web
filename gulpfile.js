@@ -1,6 +1,8 @@
 'use strict';
 
-var gulp = require('gulp'),
+/* Sourced from: https://gist.github.com/TravelingTechGuy/9996733 */
+
+const gulp = require('gulp'),
 	clean = require('gulp-clean'),
 	cleanhtml = require('gulp-cleanhtml'),
 	minifycss = require('gulp-minify-css'),
@@ -10,13 +12,13 @@ var gulp = require('gulp'),
 	zip = require('gulp-zip');
 
 //clean build directory
-gulp.task('clean', function() {
+gulp.task('clean', () => {
 	return gulp.src('build/*', {read: false})
 		.pipe(clean());
 });
 
 //copy static folders to build directory
-gulp.task('copy', function() {
+gulp.task('copy', () => {
 	gulp.src('src/fonts/**')
 		.pipe(gulp.dest('build/fonts'));
 	gulp.src('src/icons/**')
@@ -28,21 +30,21 @@ gulp.task('copy', function() {
 });
 
 //copy and compress HTML files
-gulp.task('html', function() {
+gulp.task('html', () => {
 	return gulp.src('src/*.html')
 		.pipe(cleanhtml())
 		.pipe(gulp.dest('build'));
 });
 
 //run scripts through JSHint
-gulp.task('jshint', function() {
+gulp.task('jshint', () => {
 	return gulp.src('src/scripts/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));
 });
 
 //copy vendor scripts and uglify all other scripts, creating source maps
-gulp.task('scripts', ['jshint'], function() {
+gulp.task('scripts', ['jshint'], () => {
 	gulp.src('src/scripts/vendors/**/*.js')
 		.pipe(gulp.dest('build/scripts/vendors'));
 	return gulp.src(['src/scripts/**/*.js', '!src/scripts/vendors/**/*.js'])
@@ -52,7 +54,7 @@ gulp.task('scripts', ['jshint'], function() {
 });
 
 //minify styles
-gulp.task('styles', function() {
+gulp.task('styles', () => {
 // 	return gulp.src('src/styles/**/*.css')
 // 		.pipe(minifycss({root: 'src/styles', keepSpecialComments: 0}))
 // 		.pipe(gulp.dest('build/styles'));
@@ -61,7 +63,7 @@ gulp.task('styles', function() {
 });
 
 //build ditributable and sourcemaps after other tasks completed
-gulp.task('zip', ['html', 'scripts', 'styles', 'copy'], function() {
+gulp.task('zip', ['html', 'scripts', 'styles', 'copy'], () => {
 	var manifest = require('./src/manifest'),
 		distFileName = manifest.name + ' v' + manifest.version + '.zip',
 		mapFileName = manifest.name + ' v' + manifest.version + '-maps.zip';
@@ -76,6 +78,6 @@ gulp.task('zip', ['html', 'scripts', 'styles', 'copy'], function() {
 });
 
 //run all tasks after build directory has been cleaned
-gulp.task('default', ['clean'], function() {
+gulp.task('default', ['clean'], () => {
     gulp.start('zip');
 });
