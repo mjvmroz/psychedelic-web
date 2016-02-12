@@ -1,0 +1,30 @@
+{
+  "name": "psychedelic-web",
+  "version": "0.0.1",
+  "description": "Make webpages change color at alarming rates",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scarl3tt/psychedelic-web.git"
+  },
+  "author": "Michael Mroz",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/scarl3tt/psychedelic-web/issues"
+  },
+  "homepage": "https://github.com/scarl3tt/psychedelic-web#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-cleanhtml": "^1.0.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-uglify": "^1.5.2",
+    "gulp-zip": "^3.1.0",
+    "jshint": "^2.9.1"
+  }
+}
