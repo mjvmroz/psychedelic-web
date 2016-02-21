@@ -1,6 +1,6 @@
 {
   "name": "psychedelic-web",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Make webpages change color at alarming rates",
   "main": "gulpfile.js",
   "scripts": {
