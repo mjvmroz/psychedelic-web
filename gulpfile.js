@@ -7,7 +7,6 @@ const gulp = require('gulp'),
   jshint = require('gulp-jshint'),
   stripdebug = require('gulp-strip-debug'),
   uglify = require('gulp-uglify'),
-  gutil = require('gutil'),
   zip = require('gulp-zip'),
 
   createStyleTask = function(path) {
