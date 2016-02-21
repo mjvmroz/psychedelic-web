@@ -74,10 +74,9 @@ gulp.task('styles', () => [
 //build ditributable and sourcemaps after other tasks completed
 gulp.task('zip', ['html', 'scripts', 'styles', 'copy'], () => {
   const manifest = require('./src/manifest'),
-    distFileName = `${manifest.name} v${manifest.version}.zip`,
-    mapFileName = manifest.name + ' v' + manifest.version + '-maps.zip';
+    distFileName = `${manifest.name} v${manifest.version}.zip`;
   //build distributable extension
-  return gulp.src(['build/**', '!build/js/**/*.map'])
+  return gulp.src(['build/**'])
     .pipe(zip(distFileName))
     .pipe(gulp.dest('dist'));
 });
