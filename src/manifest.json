@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "Make webpages change color at alarming rates",
-  "homepage_url": "https://github.com/scarl3tt/psychedelic-web",
+  "homepage_url": "https://github.com/scarl3tt/psychedelic-web#readme",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -17,7 +17,10 @@
         "<all_urls>"
       ],
       "css": [
-        "src/inject/inject.css"
+        "content_scripts/css/inject.css"
+      ],
+      "js": [
+        "content_scripts/js/inject.js"
       ]
     }
   ]
